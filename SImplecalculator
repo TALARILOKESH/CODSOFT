@@ -1,0 +1,32 @@
+#CODSOFT
+def add(Num1,Num2):
+    return Num1+Num2
+def subtraction(Num1,Num2):
+    return Num1-Num2
+def Mutliply(Num1,Num2):
+    return Num1*Num2
+def Division(Num1,Num2):
+    return Num1/Num2
+print("Choose Operation:\n 1.Add\n 2.Subtraction\n 3.Multiply\n 4.Divide\n")
+while True:
+    choice =input("Enter choice :")
+    if choice in ('1','2','3','4'):
+        try:
+            num1=float(input("Enter the First number:"))
+            num2=float(input("Enter the Second number:"))
+        except ValueError:
+            print("Error. Invalid input")
+            continue
+        if choice =='1':
+            print(num1 ,"+",num2,"=",add(num1,num2))
+        elif choice =='2':
+            print(num1,"-",num2,"=",subtraction(num1,num2))
+        elif choice =='2':
+            print(num1,"*",num2,"=",Multiply(num1,num2))
+        elif choice =='4':
+            print(num1,"/",num2,"=",Division(num1,num2))
+        next_calculation=input("Next calculation (yes/no)?")
+        if next_calculation =="no":
+            break
+    else:
+        print("Invalid Input")
