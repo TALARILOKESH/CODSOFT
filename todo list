@@ -1,0 +1,38 @@
+#CODSOFT
+tasks = []
+def add_item():
+    item = input("Enter a new item: ")
+    tasks.append(item)
+    print("Item added successfully!")
+
+def show_items():
+    for i, item in enumerate(tasks, 1):
+        print(f"{i}. {item}")
+
+def remove_item():
+    item_number = int(input("Enter the item number to remove: "))
+    try:
+        del tasks[item_number - 1]
+        print("Item removed successfully!")
+    except IndexError:
+        print("Invalid item number.")
+
+while True:
+    print("\n1. Add Item")
+    print("2. Show Items")
+    print("3. Remove Item")
+    print("4. Quit")
+
+    selection = input("Select an option: ")
+
+    if selection == '1':
+        add_item()
+    elif selection == '2':
+        show_items()
+    elif selection == '3':
+        show_items()
+        remove_item()
+    elif selection == '4':
+        break
+    else:
+        print("Invalid selection. Please try again.")
